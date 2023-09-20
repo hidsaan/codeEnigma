@@ -1,0 +1,63 @@
+﻿@page
+@model internRegistration.Pages.LoginModel
+@{
+}
+
+<br />
+
+<style>
+
+    body {
+        background-image: url("./backgroundlogin.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .bg{
+        box-shadow: 5px 5px 10px #888888;
+        border-radius: 7px;
+        margin:auto;
+        background-color: white;
+    }
+
+    .login
+    {
+        color: #8888;
+    }
+    .login a
+    {
+        text-decoration:underline;
+        color: #8888;
+    }
+
+    .login a:hover
+    {
+         color: #535DE4;
+    }
+
+</style>
+
+<bg-image>
+<div class="container-fluid">
+    <div class="w-50 p-4 bg">
+        <p id="Register"><h5 class="text-center display-6">Login:</h5></p>
+
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Email" aria-describedby="emailHelp">
+             </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" placeholder="Enter Your Password" id="exampleInputPassword1">
+            </div>
+            <div class="text-center login">
+                <button type="submit" class="btn btn-outline-primary">Login</button>
+                <p class="mt-2">Don't have an account?<a href="/Signup">Sign Up</a> now!</p>
+            </div>
+        </form>
+    </div>
+</div>
+</bg-image>

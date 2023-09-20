@@ -1,0 +1,99 @@
+﻿@page
+@model internRegistration.Pages.SignupModel
+@{
+}
+
+<br />
+
+<style>
+
+    body {
+        background-image: url("./backgroundlogin.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .bg
+    {
+        margin: auto;
+        box-shadow: 5px 5px 10px #888888;
+        border-radius: 5px;
+        background-color: white;
+    }
+</style>
+
+<div class="container-fluid">
+
+    @if (Model.errorMessage.Length > 0)
+    {
+        <div class=" alert alert-warning alert-dismissible fade show " role="alert">
+            <strong> @Model.errorMessage</strong>
+            <button type="button" class=" btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+    }
+
+    <div class="w-75 p-4 bg">
+        <p id="Register"><h5 class="text-center display-6">Sign-Up:</h5></p>
+
+        <form id="myForm" method="post">
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="exampleInputName1" class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="firstname" value="@Model.userInfo.firstname" id="exampleInputName1" placeholder="Enter First Name" aria-describedby="nameHelp">
+                </div>
+                <div class="mb-3 col">
+                    <label for="exampleInputName2" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="lastname" value="@Model.userInfo.lastname" id="exampleInputName2" placeholder="Enter Last Name" aria-describedby="nameHelp">
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="mt-2 col">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" name="dob" value="@Model.userInfo.dob" id="dob" required>
+                </div>
+                <div class="mt-2 col">
+                    <label for="phone" class="form-label">Phone No.</label>
+                    <input type="tel" class="form-control" name="phone" value="@Model.userInfo.phone" id="phone" required>
+                </div>
+                <div class="mt-2 col">
+                    <label for="mail" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" value="@Model.userInfo.email" id="mail" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mt-3">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" name="address" value="@Model.userInfo.address" id="inputAddress" placeholder="Street Name, House No., City" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col mt-3">
+                    <label for="inputPassword51" class="form-label">Password</label>
+                    <input type="password" id="inputPassword51" class="form-control" name="password" value="@Model.userInfo.password" aria-labelledby="passwordHelpBlock" required>
+                    <div id="passwordHelpBlock" class="form-text">
+                        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces or emoji.
+                    </div>
+                </div>
+               @*  <div class="col mt-3">
+                    <label for="inputPassword5" class="form-label">Confirm Password</label>
+                    <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock" required>
+                </div> *@
+            </div>
+
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                   I accept the <a href="/Privacy">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" value="Submit" class="btn btn-outline-primary mt-3" onclick="validateForm()">Submit</button>
+
+        </form>
+    </div>
+</div>

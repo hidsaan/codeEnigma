@@ -1,0 +1,41 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+header {
+    background-color: white;
+}
+
+footer {
+    background-color: white;
+}
+
+.innav {
+    color: #0B60D1;
+}
+
+.list ul
+{
+  list-style: none;
+  display:inline;
+}
+
+.list a
+{
+    display:inline;
+}

@@ -1,0 +1,102 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    body {
+        background-image: url("./InternRegister Background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .colohe
+    {
+        color: #888888;
+    }
+
+    .jbtron
+    {
+        box-shadow: 5px 5px 10px #888888;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    .intro
+    {
+        border-bottom: 1px dotted #888888;
+    }
+
+    .exp
+    {
+        box-shadow: 5px 5px 10px #888888;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+
+</style>
+
+<div class="container-fluid">
+
+    <div class="text-center intro mb-5">
+        <h2 class="display-5">Welcome to Intern Register!</h2>
+        <p class="colohe fw-light">-A perfect platform to kickstart your career!</p>
+    </div>
+
+    <div class="text-center mt-5 p-5 exp">
+        <h3 class="display-6
+        ">
+            Explore The Opportunities
+        </h3>
+        <p class="text-center">Select the subject of your choice to check the internship opportunities that we can offer to you.</p>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Explore
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/">C#</a></li>
+                <li><a class="dropdown-item" href="/">HTML/ CSS</a></li>
+                <li><a class="dropdown-item" href="/">JavaScript</a></li>
+                <li><a class="dropdown-item" href="/">Python</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row align-items-md-stretch jbtron mt-4">
+        <div class="col-md-6">
+            <div class="h-100 p-5">
+                <h2>Get Started</h2>
+                <p>Start Your Journey Today By Registering Yourself With Us. Click the button below!</p>
+                <button class="btn btn-outline-primary" type="button">Register</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="h-100">
+                <img src="~/pexels-thiago-japyassu-1113804.jpg" height="250vh" width="550vw" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-md-stretch jbtron mt-5">
+        <div class="col-md-6">
+            <div class="h-100">
+                <img src="~/pexels-faizur-rehman-10050661.jpg" height="250vh" width="550vw" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="h-100 p-5">
+                <h2>Expert Advice</h2>
+                <p>Talk to our renowned experts to get couselling for your career. To avail this feature, click below.</p>
+                <button class="btn btn-outline-primary" type="button">Seek Advice</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+</div>
