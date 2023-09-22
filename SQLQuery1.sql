@@ -1,14 +1,15 @@
-﻿create table users (
-id int not null primary key identity,
-firstname varchar (100)  not null,
-lastname varchar (100)  not null,
-dob varchar (50) not null,
-phone varchar (20) null,
-email varchar (150) not null unique,
-address varchar (200) null,
-password varchar (25)  not null,
-created_at datetime not null default current_timestamp
+﻿CREATE TABLE users (
+    id INT NOT NULL PRIMARY KEY IDENTITY,
+    firstname VARCHAR (100) NOT NULL,
+    lastname VARCHAR (100) NOT NULL,
+    dob VARCHAR (50) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    email VARCHAR (150) NOT NULL UNIQUE,
+    address VARCHAR(100) NULL,
+    password VARCHAR (20) NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-insert into users (firstname, lastname, dob, phone, email, address, password) values
-('Aiman', 'Mukhtar', '11-09-2000', '+91 9858280468', 'aiman@gmail.com', 'srinagar, j&k', 'abc123')
+INSERT INTO users (firstname, lastname, dob, phone, email, address, password)
+VALUES
+('Aiman', 'Mir', '12-09-2000', 'Hawal', 'aiman@gmail.com', '9906599065', '12346qweeeee')

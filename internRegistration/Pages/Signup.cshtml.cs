@@ -16,6 +16,13 @@ namespace internRegistration.Pages
     }
     public class SignupModel : PageModel
     {
+        //private readonly string connectionString;
+
+        //public SignupModel(IConfiguration configuration)
+        //{
+        //    connectionString = configuration.GetConnectionString("DefaultConnection");
+        //}
+
         public UserInfo userInfo = new UserInfo();
         public string errorMessage = "";
         public string successMessage = "";
@@ -33,33 +40,36 @@ namespace internRegistration.Pages
             userInfo.address = Request.Form["address"];
             userInfo.password = Request.Form["password"];
 
-            if (userInfo.firstname.Length == 0 || userInfo.lastname.Length==0 || userInfo.dob.Length==0 || userInfo.phone.Length == 0 || userInfo.email.Length == 0 || userInfo.address.Length == 0 || userInfo.password.Length==0 )
+            /*if (userInfo.firstname.Length == 0 || userInfo.lastname.Length==0 || userInfo.dob.Length==0 || userInfo.phone.Length == 0 || userInfo.email.Length == 0 || userInfo.address.Length == 0 || userInfo.password.Length==0 )
             {
                 errorMessage = "All feilds are required";
                 return;
             }
 
-            if ( userInfo.phone.Length < 10 || userInfo.phone.Length > 12 )
+            if ( userInfo.phone.Length < 10)
             {
                 errorMessage = "Enter correct phone number";
                 return;
             }
 
-            if (userInfo.password.Length < 8 || userInfo.phone.Length > 20)
+            if (userInfo.password.Length < 8)
             {
                 errorMessage = "Password has to be 8-20 characters long";
                 return;
-            }
+            }*/
 
             try
             {
-                String connectionString = "Data Source=DESKTOP-MIVMU6F;Integrated Security=True";
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(userInfo.password);
+
+                string connectionString = "Data Source=DESKTOP-MIVMU6F;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     String sql = "INSERT INTO users" +
-                        "(firstname , lastname , dob ,phone, email, address, password ) VALUES " +
-                        "( @firstname , @lastname , @dob ,@phone, @email, @address, @password );";
+                        "(firstname, lastname, dob, phone, email, address, password) VALUES" +
+                        "(@firstname, @lastname, @dob, @phone, @email, @address, @password);";
+
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@firstname", userInfo.firstname);
@@ -68,7 +78,7 @@ namespace internRegistration.Pages
                         command.Parameters.AddWithValue("@phone", userInfo.phone);
                         command.Parameters.AddWithValue("@email", userInfo.email);
                         command.Parameters.AddWithValue("@address", userInfo.address);
-                        command.Parameters.AddWithValue("@password", userInfo.password);
+                        command.Parameters.AddWithValue("@password", hashedPassword);
 
                         command.ExecuteNonQuery();
                     }
@@ -77,9 +87,9 @@ namespace internRegistration.Pages
             }
             catch (Exception ex)
             {
-                //errorMessage = ex.Message;
+                errorMessage = ex.Message;
 
-                Console.WriteLine(ex.Message); 
+                //Console.WriteLine(ex.ToString()); 
                 return;
             }
 
@@ -94,7 +104,7 @@ namespace internRegistration.Pages
             /*            successMessage = "Sign In suceesful";
             */
 
-            errorMessage = "There's an error in your inputs.";
+            //errorMessage = "There's an error in your inputs.";
             Response.Redirect("/Login");
         }
     }

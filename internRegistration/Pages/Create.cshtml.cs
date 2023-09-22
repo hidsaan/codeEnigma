@@ -5,8 +5,14 @@ using System.Data.SqlClient;
 namespace internRegistration.Pages
 {
     public class CreateModel : PageModel
-
     {
+        private readonly string connectionString;
+
+        public CreateModel(IConfiguration configuration)
+        {
+            connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
+
         public InternInfo internInfo = new InternInfo();
         public string errorMessage = "";
         public string successMessage = "";
@@ -29,7 +35,6 @@ namespace internRegistration.Pages
             // save the new client into the database
             try
             {
-                String connectionString = "Data Source=DESKTOP-MIVMU6F;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection .Open();

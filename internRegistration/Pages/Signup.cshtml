@@ -22,6 +22,22 @@
         border-radius: 5px;
         background-color: white;
     }
+
+    .loginlink 
+    {
+        color: #8888;
+    }
+
+    .loginlink a {
+        color: #8888;
+        text-decoration: underline;
+    }
+
+    .loginlink a:hover
+    {
+         color: #535DE4;
+    }
+
 </style>
 
 <div class="container-fluid">
@@ -36,6 +52,7 @@
 
     <div class="w-75 p-4 bg">
         <p id="Register"><h5 class="text-center display-6">Sign-Up:</h5></p>
+        <p class="loginlink">Already have an account? <a href="/Login">Login</a> here.</p>
 
         <form id="myForm" method="post">
             <div class="row">
@@ -92,7 +109,7 @@
                 </label>
             </div>
 
-            <button type="submit" value="Submit" class="btn btn-outline-primary mt-3" onclick="validateForm()">Submit</button>
+            <button type="submit" value="Submit" class="btn btn-outline-primary mt-3" >Submit</button>
 
         </form>
     </div>

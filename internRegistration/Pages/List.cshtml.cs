@@ -17,12 +17,18 @@ namespace internRegistration.Pages
     }
     public class ListModel : PageModel
     {
+        private readonly string connectionString;
+
+        public ListModel(IConfiguration configuration)
+        {
+            connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
+
         public List<InternInfo> listInterns = new List<InternInfo>();
         public void OnGet()
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-MIVMU6F;Integrated Security=True ";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();

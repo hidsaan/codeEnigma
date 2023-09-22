@@ -39,19 +39,32 @@
 
 </style>
 
-<bg-image>
+
+
+  
 <div class="container-fluid">
+
+   
+
     <div class="w-50 p-4 bg">
         <p id="Register"><h5 class="text-center display-6">Login:</h5></p>
 
+
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div class=" alert alert-warning alert-dismissible fade show " role="alert">
+                <strong> @Model.errorMessage</strong>
+                <button type="button" class=" btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        }
         <form>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your Email" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="exampleInputEmail1" value="@Model.loginInfo.Email" placeholder="Enter Your Email" aria-describedby="emailHelp">
              </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" placeholder="Enter Your Password" id="exampleInputPassword1">
+                    <input type="password" class="form-control" placeholder="Enter Your Password" value="@Model.loginInfo.Password" id="exampleInputPassword1">
             </div>
             <div class="text-center login">
                 <button type="submit" class="btn btn-outline-primary">Login</button>
@@ -60,4 +73,3 @@
         </form>
     </div>
 </div>
-</bg-image>

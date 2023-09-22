@@ -6,6 +6,13 @@ namespace internRegistration.Pages
 {
     public class EditModel : PageModel
     {
+        private readonly string connectionString;
+
+        public EditModel(IConfiguration configuration)
+        {
+            connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
+
         public InternInfo internInfo=new InternInfo();
         public string errorMessage = "";
         public string successMessage = "";
@@ -17,7 +24,6 @@ namespace internRegistration.Pages
             String id = Request.Query["id"];
             try
             {
-                String connectionString = "Data Source=DESKTOP-MIVMU6F;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
