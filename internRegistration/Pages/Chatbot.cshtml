@@ -1,0 +1,54 @@
+﻿@page
+@model internRegistration.Pages.ChatbotModel
+@{
+}
+
+<style>
+
+    /* body {
+        background-image: url("./chatbotbackgroundtexted.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    } */
+
+    .inputbox {
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+        border-radius:5px;
+    }
+
+    .botimage {
+        overflow:hidden;
+    }
+
+    .botimage img {
+        max-width: 100%; 
+        max-height: 100%; 
+        display: block; 
+        margin: 0 auto; 
+    }
+
+</style>
+
+<br />
+
+<div class="container">
+    <div class="botimage">
+        <img src="~/chatbotbgtexted.jpg" alt="Olaf-The Chatbot"/>
+    </div>
+
+    <div class="inputbox w-100 mt-2 p-3">
+        <form>
+            <div class="row">
+                <div class="form-floating col-md-9">
+                    <textarea class="form-control" placeholder="Leave a question here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Write Your Queries Here:</label>
+                </div>
+                <div class="col-md-3 mt-2">
+                    <button type="button" class="btn btn-secondary" disabled data-bs-toggle="button">Go</button>
+                </div>
+            </div>
+        </form>     
+    </div>
+</div>

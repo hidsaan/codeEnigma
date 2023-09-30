@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\backgroundlogin.jpg"
     },
     {
+      "Id": "C:\\Users\\de\\Desktop\\internreg_dotnet\\InternRegistration\\internRegistration\\wwwroot\\chatbotbackgroundtexted.jpg",
+      "PackagePath": "staticwebassets\\chatbotbackgroundtexted.jpg"
+    },
+    {
+      "Id": "C:\\Users\\de\\Desktop\\internreg_dotnet\\InternRegistration\\internRegistration\\wwwroot\\chatbotbgtexted.jpg",
+      "PackagePath": "staticwebassets\\chatbotbgtexted.jpg"
+    },
+    {
       "Id": "C:\\Users\\de\\Desktop\\internreg_dotnet\\InternRegistration\\internRegistration\\wwwroot\\css\\Login.css",
       "PackagePath": "staticwebassets\\css\\Login.css"
     },

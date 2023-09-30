@@ -6,11 +6,6 @@ using BCrypt.Net;
 
 namespace internRegistration.Pages
 {
-    public class LoginInfo
-    {
-        public string Email;
-        public string Password;
-    }
     public class LoginModel : PageModel
     {
        /* private readonly string connectionString;
@@ -23,9 +18,7 @@ namespace internRegistration.Pages
         public LoginInfo loginInfo = new LoginInfo();
         public string errorMessage = "";
 
-        public void OnGet()
-        {
-        }
+       
 
         public void OnPost()
         {
@@ -33,11 +26,11 @@ namespace internRegistration.Pages
             loginInfo.Password = Request.Form["Password"];
 
 
-            /*if (loginInfo.Email.Length == 0 || loginInfo.Password.Length == 0)
+            if (loginInfo.Email.Length == 0 || loginInfo.Password.Length == 0)
             {
                 errorMessage = "All feilds are required";
                 return;
-            }*/
+            }
 
 
             try
@@ -47,22 +40,15 @@ namespace internRegistration.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "SELECT email, password FROM users WHERE email = @Email";
+
+
+
+                    String sql = "SELECT email, password FROM users WHERE email = @email";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@email", loginInfo.Email);
-                        //command.Parameters.AddWithValue("@Password", loginInfo.Passwo
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //
-                        //rd);
-
+                        //command.Parameters.AddWithValue("@Password", loginInfo.Password);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -74,7 +60,7 @@ namespace internRegistration.Pages
                                 {
                                     loginInfo.Email = "";
                                     loginInfo.Password = "";
-                                    //Response.Redirect("/Index");
+                                    Response.Redirect("/List");
                                 }
                               
                             }
@@ -82,13 +68,13 @@ namespace internRegistration.Pages
                     }
                 }
 
-                errorMessage = "Login failed";
+                //errorMessage = "Login failed";
 
             }
             catch (Exception ex)
             {
-               // Console.WriteLine(ex.ToString());
-                errorMessage = ex.Message;
+                Console.WriteLine(ex.ToString());
+                //errorMessage = ex.Message;
                 
             }
         }

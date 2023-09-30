@@ -24,7 +24,7 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item me-2 ms-3">
+                        <li class="nav-item me-2 ms-2">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item me-2">
@@ -32,9 +32,6 @@
                         </li>
                         <li class="nav-item me-2">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Signup">Sign-Up </a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/List">Intern List </a>
                         </li>
                     </ul>
                 </div>
@@ -47,7 +44,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+   @*  <footer class="border-top footer text-muted">
         <div class="container row">
             <div class="col-md-10">
                 &copy; 2023 - InternRegistration <a asp-area="" asp-page="/Privacy">Privacy Policy</a>
@@ -66,6 +63,44 @@
 
         </div>
            
+    </footer> *@
+
+    <footer class="mt-5 pb-4">
+        <div class="footer-content row ">
+            <div class="footer-section col-md-4 mt-5 text-center">
+                <ul>
+                    <li><a href="mailto:hidsaanmajeed427226@gmail.com?subject=web%20siesta">Email Us</a></li>
+                    <li><a href="tel:+918899184950">Call Us</a></li> 
+                    <li><a asp-area="" asp-page="/About">About Us</a></li>
+                    <li><a asp-area="" asp-page="/Privacy">Privacy Policy</a></li> 
+                </ul>
+            </div>
+            
+            <div class="footer-section col-md-4 mt-3 text-center">
+                <h5>About Us</h5>
+                <p class="text-muted">Welcome to InternRegister, your trusted partner in navigating the journey towards a fulfilling and successful career. We empower individuals to make informed decisions about their careers and to help them embark on a journey that aligns with their passions, skills, and aspirations.</p>
+            </div>
+
+            <div class="footer-section col-md-4 mt-3 text-center">
+                <h5>Support Us</h5>
+                <span>
+                    <a href="https://www.instagram.com"><img src="~/instagram.svg" height="30vh" width="30vw" /></a>
+                </span>
+                <span>
+                    <a href="https://www.facebook.com"><img src="~/facebook.svg" height="30vh" width="30vw" /></a>
+                </span>
+                <span>
+                    <a href="https://twitter.com "><img src="~/twitter.svg" height="30vh" width="30vw" /></a>
+                </span>
+            </div>
+
+        </div>
+
+        <hr />
+
+        <div class="footer-bottom text-muted text-center">
+            <p>&copy; 2023 InternRegister. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

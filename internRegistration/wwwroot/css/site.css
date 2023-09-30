@@ -13,16 +13,31 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
-}
-
 header {
     background-color: white;
 }
 
 footer {
+    border-top: #DEDEDF solid 1px;
     background-color: white;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer li{
+    list-style:  none;
+}
+
+footer .footer-content a {
+    text-decoration: none;
+    color: black;
+}
+
+footer .footer-content a:hover {
+    color: #535DE4;
+}
+
+.iconsfooter{
+    float:right;
 }
 
 .innav {

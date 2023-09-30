@@ -16,8 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\de\Desktop\internreg_dotnet\InternRegistration\internRegistration
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/de/Desktop/internreg_dotnet/InternRegistration/internRegistration/Pages/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/de/Desktop/internreg_dotnet/InternRegistration/internRegistration/Pages/Chatbot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhdGJvdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/de/Desktop/internreg_dotnet/InternRegistration/internRegistration/Pages/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/de/Desktop/internreg_dotnet/InternRegistration/internRegistration/Pages/Csharpexplore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3NoYXJwZXhwbG9yZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/de/Desktop/internreg_dotnet/InternRegistration/internRegistration/Pages/Delete.cshtml]

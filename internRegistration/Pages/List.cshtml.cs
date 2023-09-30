@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
@@ -5,16 +6,7 @@ using System.Data.SqlClient;
 namespace internRegistration.Pages
 {
 
-
-    public class InternInfo
-    {
-        public string id;
-        public string name; 
-        public string email;
-        public string phone;
-        public string address;
-        public string created_at;
-    }
+    [Authorize]
     public class ListModel : PageModel
     {
         private readonly string connectionString;
